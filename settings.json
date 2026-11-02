@@ -1,0 +1,34 @@
+{
+  "model": "sonnet",
+  "enabledPlugins": {
+    "image-preview@better-claude": true,
+    "sub-meter@better-claude": true,
+    "commit@better-claude": true,
+    "superpowers@anthropic-plugin-directory": true,
+    "claude-memory@anthropic-plugin-directory": true
+  },
+  "extraKnownMarketplaces": {
+    "addy-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "addyosmani/agent-skills"
+      }
+    },
+    "better-claude": {
+      "source": {
+        "source": "github",
+        "repo": "midudev/better-claude"
+      }
+    }
+  },
+  "pluginConfigs": {
+    "image-preview@better-claude": {
+      "options": {
+        "window": true
+      }
+    }
+  },
+  "autoUpdatesChannel": "latest",
+  "theme": "dark",
+  "autoCompactEnabled": true
+}

@@ -1,0 +1,1 @@
+{ "name": "agent-status", "version": "0.1.0", "description": "Shows in the status line which agent (main or subagent) is running." }

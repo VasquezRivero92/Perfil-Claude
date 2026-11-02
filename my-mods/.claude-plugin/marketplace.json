@@ -1,0 +1,1 @@
+{ "name": "my-mods", "owner": { "name": "jvasquez" }, "plugins": [ { "name": "agent-status", "source": "./agent-status", "description": "Shows the active agent in the status line." } ] }
