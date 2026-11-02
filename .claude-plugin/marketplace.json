@@ -1,0 +1,11 @@
+{
+  "name": "perfil-claude",
+  "owner": { "name": "VasquezRivero92" },
+  "plugins": [
+    {
+      "name": "profile-sync",
+      "source": "./plugins/profile-sync",
+      "description": "Comandos /sync-push y /sync-pull para sincronizar la configuración de Claude Code entre equipos."
+    }
+  ]
+}

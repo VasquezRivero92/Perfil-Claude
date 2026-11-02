@@ -5,9 +5,16 @@
     "sub-meter@better-claude": true,
     "commit@better-claude": true,
     "superpowers@anthropic-plugin-directory": true,
-    "claude-memory@anthropic-plugin-directory": true
+    "claude-memory@anthropic-plugin-directory": true,
+    "profile-sync@perfil-claude": true
   },
   "extraKnownMarketplaces": {
+    "perfil-claude": {
+      "source": {
+        "source": "github",
+        "repo": "VasquezRivero92/Perfil-Claude"
+      }
+    },
     "addy-agent-skills": {
       "source": {
         "source": "github",

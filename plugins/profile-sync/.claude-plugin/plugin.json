@@ -1,0 +1,5 @@
+{
+  "name": "profile-sync",
+  "version": "0.1.0",
+  "description": "Sincroniza tu configuración de Claude Code (settings, CLAUDE.md, skills, agents, commands, mods) entre equipos usando el repo Perfil-Claude."
+}
