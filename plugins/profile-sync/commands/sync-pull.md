@@ -8,7 +8,7 @@ Sincroniza repo `~/Perfil-Claude` → `~/.claude` en este equipo. Sigue estos pa
 1. **Repo**: si `~/Perfil-Claude/.git` no existe, clona `https://github.com/VasquezRivero92/Perfil-Claude.git` en `~/Perfil-Claude`. Si existe, ejecuta `git -C ~/Perfil-Claude pull --ff-only`.
 2. **Contenido** (con Bash; crea `~/.claude` si no existe; no borres nada en el destino):
    - Copia `CLAUDE.md` del repo a `~/.claude/CLAUDE.md`.
-   - Copia recursivamente `agents`, `commands` y `my-mods` del repo a `~/.claude/` (solo los que existan).
+   - Copia recursivamente `agents`, `commands`, `hooks` y `my-mods` del repo a `~/.claude/` (solo los que existan).
    - Copia cada carpeta de `skills/` del repo a `~/.claude/skills/`.
 3. **settings.json**:
    - Si `~/.claude/settings.json` existe, haz una copia en `~/.claude/settings.json.bak`.

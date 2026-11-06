@@ -10,7 +10,7 @@ Mensaje de commit: `$ARGUMENTS` (si está vacío usa `Sync configuración de Cla
 1. **Repo**: si `~/Perfil-Claude/.git` no existe, clona `https://github.com/VasquezRivero92/Perfil-Claude.git` en `~/Perfil-Claude`. Si existe, ejecuta `git -C ~/Perfil-Claude pull --ff-only`.
 2. **Contenido** (con Bash, sin borrar nada en el destino):
    - Copia `~/.claude/CLAUDE.md` al repo si existe.
-   - Copia recursivamente `~/.claude/agents`, `~/.claude/commands` y `~/.claude/my-mods` al repo (solo los que existan).
+   - Copia recursivamente `~/.claude/agents`, `~/.claude/commands`, `~/.claude/hooks` y `~/.claude/my-mods` al repo (solo los que existan).
    - Copia cada carpeta de `~/.claude/skills/` al repo en `skills/`, **excepto `synced`** (lo gestiona la cuenta de claude.ai).
 3. **settings.json**: lee `~/.claude/settings.json` y escribe en `~/Perfil-Claude/settings.json` la misma configuración, con estas exclusiones (conserva el resto tal cual, JSON con indentación de 2 espacios):
    - Elimina la clave `autoMode` completa.
