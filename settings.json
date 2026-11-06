@@ -35,6 +35,19 @@
       }
     }
   },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ~/.claude/hooks/auto-sync.js"
+          }
+        ]
+      }
+    ]
+  },
   "autoUpdatesChannel": "latest",
   "theme": "dark",
   "autoCompactEnabled": true
