@@ -1,5 +1,30 @@
 {
   "model": "sonnet",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ~/.claude/hooks/auto-sync.js --pull",
+            "timeout": 60
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ~/.claude/hooks/auto-sync.js"
+          }
+        ]
+      }
+    ]
+  },
   "enabledPlugins": {
     "image-preview@better-claude": true,
     "sub-meter@better-claude": true,
@@ -34,31 +59,6 @@
         "window": true
       }
     }
-  },
-  "hooks": {
-    "SessionStart": [
-      {
-        "matcher": "startup|resume",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node ~/.claude/hooks/auto-sync.js --pull",
-            "timeout": 60
-          }
-        ]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "Write|Edit|NotebookEdit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node ~/.claude/hooks/auto-sync.js"
-          }
-        ]
-      }
-    ]
   },
   "autoUpdatesChannel": "latest",
   "theme": "dark",
