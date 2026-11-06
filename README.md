@@ -34,14 +34,20 @@ Esto clona el repo en `~/Perfil-Claude` y aplica la configuración sobre `~/.cla
 - **`/sync-pull`**: trae la configuración del repo y la aplica en este equipo.
 - **`/sync-push [mensaje]`**: sube la configuración local al repo.
 
-## Subida automática (hook)
+## Sincronización automática (hooks)
 
-`hooks/auto-sync.js` está registrado como hook `PostToolUse` (`Write|Edit|NotebookEdit`). Cuando Claude modifica un hook, skill, agente, comando, mod, `CLAUDE.md` o `settings.json` dentro de `~/.claude`, sincroniza con este repo y hace `git push` en segundo plano. El resultado queda en `~/.claude/hooks/auto-sync.log`.
+`hooks/auto-sync.js` está registrado en dos hooks:
+
+- **`SessionStart`** (`startup|resume`): al abrir Claude Code trae los cambios del repo (`git pull --rebase`), los aplica en `~/.claude` y sube lo que haya pendiente en local. Si aplica algo, avisa en la sesión; si cambiaron plugins o hooks, reinicia o usa `/reload-plugins`.
+- **`PostToolUse`** (`Write|Edit|NotebookEdit`): cuando Claude modifica un hook, skill, agente, comando, mod, `CLAUDE.md` o `settings.json` dentro de `~/.claude`, lo sube al repo en segundo plano.
+
+Entre equipos, por archivo **gana el más reciente** (fecha de modificación) y nunca se borra nada. El resultado queda en `~/.claude/hooks/auto-sync.log`.
 
 Limitaciones:
 
-- Solo detecta ediciones hechas con las herramientas de Claude. Si cambias algo a mano o con Bash, usa `/sync-push`.
-- Si el push falla (por ejemplo, por un conflicto), solo se ve en el log.
+- La subida solo se dispara con ediciones hechas por las herramientas de Claude. Si cambias algo a mano o con Bash, se sube en el siguiente inicio de sesión o con `/sync-push`.
+- Los borrados no se propagan entre equipos.
+- Si hay un conflicto o falla la red, solo se ve en el log (y un aviso al iniciar).
 
 ## Qué NO se sube
 
